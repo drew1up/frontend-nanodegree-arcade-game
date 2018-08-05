@@ -18,17 +18,17 @@ class Enemy {
     // which will ensure the game runs at the same speed for
     // all computers.
         this.x = this.x + this.speed * dt;
-        this.offScreenX = 505;
+        this.offScreenX = 550;
         this.startingX = -100;
         if(this.x >= this.offScreenX) {
-            this.x = this.offScreenX;
+            this.x = this.startingX;
             this.randomSpeed();
         } 
     };
 
 //Create random speeds for the enemies
     randomSpeed() {
-        let speedX = 20;
+        let speedX = 50;
         this.speed = speedX * Math.floor(Math.random() * 10 + 1);
     };
 
@@ -40,28 +40,51 @@ class Enemy {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-class Player {
-    constructor() {
-        this.startingX = 200;
-        this.startingY = 400;
-        this.x = this.startingX;
-        this.y = this.startingY;
-        this.sprite = 'images/char-pink-girl.png';
+class Player  {
+    constructor(x, y, speed) {
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
+        this.sprite = 'images/char-boy.png';
     };
 
     update() {
-        this.startingX = 200;
-        this.startingY = 400;
-        this.x = this.startingX;
-        this.y = this.startingY;
+        if(this.y > 380) {
+            this.y = 380;
+        }
+
+        if(this.x > 400) {
+            this.x = 400;
+        }
+
+        if(this.x < 0) {
+            this.x = 0;
+        }
+
+        if(this.y < 0) {
+            this.y = 0;
+        }
     };
 
     render() {
-       () => ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     };
 
-    handleInput(allowedKeys) {
-
+    handleInput(keyPress) {
+        switch(keyPress) {
+            case 'left':
+                this.x -= this.speed +50; 
+                break;
+            case 'up':
+                this.y -= this.speed + 30;
+                break;
+            case 'right':
+                this.x += this.speed + 50;
+                break;
+            case 'down':
+                this.y += this.speed + 30;
+                break;
+        }            
     }
 };
 
@@ -69,7 +92,7 @@ class Player {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-const player = new Player();
+var player = new Player(200, 380, 50);
 let allEnemies = [];
 
 for(let i = 0; i < 3; i++) {
