@@ -69,9 +69,12 @@ class Player  {
             this.x = 0;
         }
 
-        if(this.y < 0) {
-            this.y = 0;
+        if(this.y < -20) {
+            alert('Congrats, you win!');
+            this.x = 200;
+            this.y = 380;
         }
+
     };
 
     render() {
@@ -96,11 +99,24 @@ class Player  {
     }
 };
 
+/*class Bonus {
+    constructor(x, y) {
+        this.x = x; 
+        this.y = y;
+        this.sprite = 'images/Heart.png';
+    };
+
+    render() {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+}*/
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var player = new Player(200, 380, 50);
+var allBonus = [];
 let allEnemies = [];
 
 for(let i = 0; i < 3; i++) {
@@ -108,6 +124,10 @@ for(let i = 0; i < 3; i++) {
     let startSpeed = speedX * Math.floor(Math.random() * 10 + 1);
     allEnemies.push(new Enemy(-100, 60 + (85 * i), startSpeed));
 } 
+
+/*for(let i = 0; i < 5; i++) {
+    let startX = 
+}*/
 
 
 // This listens for key presses and sends the keys to your
