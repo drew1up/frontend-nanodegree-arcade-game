@@ -18,11 +18,19 @@ class Enemy {
     // which will ensure the game runs at the same speed for
     // all computers.
         this.x = this.x + this.speed * dt;
-        this.offScreenX = 550;
-        this.startingX = -100;
-        if(this.x >= this.offScreenX) {
-            this.x = this.startingX;
+       
+        if(this.x >= 550) {
+            this.x = -100;
             this.randomSpeed();
+        };
+
+    //Handle collision of player and enemy
+        if(player.x < this.x + 60 &&
+            player.x + 37 > this.x &&
+            player.y < this.y + 25 &&
+            30 + player.y > this.y) {
+                player.x = 200; 
+                player.y = 380;
         } 
     };
 
