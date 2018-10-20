@@ -52,6 +52,8 @@ class Player  {
     constructor(x, y, speed) {
         this.x = x;
         this.y = y;
+        this.width = 65;
+        this.height = 60;
         this.speed = speed;
         this.sprite = 'images/char-boy.png';
     };
@@ -99,24 +101,36 @@ class Player  {
     }
 };
 
-/*class Bonus {
+class Bonus {
     constructor(x, y) {
-        this.x = x; 
-        this.y = y;
+        this.x = x + 20; 
+        this.y = y - 15;
+        this.width = 70;
+        this.height = 75;
         this.sprite = 'images/Heart.png';
     };
 
+    update() {
+        if(player.x < this.x + this.width &&
+            player.x + player.width > this.x &&
+            player.y < this.y + this.height &&
+            player.y + player.heright > this.y) {
+            this.x = -1000;
+            this.y = -1000;
+        }
+    };
+
     render() {
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y, this.width, this.height);
     }
-}*/
+};
 
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var player = new Player(200, 380, 50);
-var allBonus = [];
+let allBonus = [];
 let allEnemies = [];
 
 for(let i = 0; i < 3; i++) {
@@ -125,9 +139,11 @@ for(let i = 0; i < 3; i++) {
     allEnemies.push(new Enemy(-100, 60 + (85 * i), startSpeed));
 } 
 
-/*for(let i = 0; i < 5; i++) {
-    let startX = 
-}*/
+for(let i = 0; i < 3; i++) {
+    let startX = 100 * Math.floor(Math.random() * 10);
+    let startY = 60 + (85 * i);
+    allBonus.push(new Bonus(startX, startY));   
+}
 
 
 // This listens for key presses and sends the keys to your

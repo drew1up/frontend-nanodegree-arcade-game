@@ -153,6 +153,10 @@ var Engine = (function(global) {
             enemy.render();
         });
 
+        allBonus.forEach(function (bonus) {
+            bonus.render();
+        });
+
         player.render();
     }
 
@@ -173,7 +177,8 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/Heart.png'
     ]);
     Resources.onReady(init);
 
