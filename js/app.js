@@ -114,9 +114,9 @@ class Bonus {
         if(player.x < this.x + this.width &&
             player.x + player.width > this.x &&
             player.y < this.y + this.height &&
-            player.y + player.heright > this.y) {
-            this.x = -1000;
+            player.y + player.height > this.y) {
             this.y = -1000;
+            this.x = -1000;
         }
     };
 
