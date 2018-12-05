@@ -4,7 +4,7 @@
 
 **_Classic Arcade Game_** is a loose replica of the classic 8-bit Atari game, Frogger
 
-##### How to play #####
+#### How to play ####
 
 Move the character across the courtyard and through the water using up/left/down/right keys.
 Avoid contact with the bugs to successfully complete the game...Try to collect any hearts along 
