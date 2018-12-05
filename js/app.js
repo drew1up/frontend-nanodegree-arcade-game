@@ -101,6 +101,7 @@ class Player  {
     }
 };
 
+//additional object that player can collect in the game
 class Bonus {
     constructor(x, y) {
         this.x = x + 20; 

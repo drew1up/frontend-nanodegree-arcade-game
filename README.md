@@ -1,6 +1,19 @@
-frontend-nanodegree-arcade-game
-===============================
+#Classic Arcade Game#
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+###Summary###
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+**_Classic Arcade Game_** is a loose replica of the classic 8-bit Atari game, Frogger
+
+#####How to play#####
+
+Move the character across the courtyard and through the water using up/left/down/right keys.
+Avoid contact with the bugs to successfully complete the game...Try to collect any hearts along 
+the way for added difficulty!! Good Luck!!
+
+###Installation###
+
+Running the application:
+1. Clone the GitHub repository to your local machine
+2. Open the index.html file in your browser  
+
+
